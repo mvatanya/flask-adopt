@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Adopt-a-pet{% endblock %}
+
+{% block content %}
+<h3>Add a pet to our registry!</h3>
+
+<form method="POST">
+  {{ form.hidden_tag() }} <!--add type=hidden form fields -->
+
+  {% for field in form
+         if field.widget.input_type != 'hidden' %}
+
+    <p>
+      {{ field.label }}
+      {{ field }}
+
+      {% for error in field.errors %}
+        {{ error }}
+      {% endfor %}
+    </p>
+
+  {% endfor %}
+
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+
+{% endblock %}
