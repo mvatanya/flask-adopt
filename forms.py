@@ -53,3 +53,23 @@ class EditPetForm(FlaskForm):
         "Available",
         validators=[Optional()]
     )  
+
+class SearchPetFinderForm(FlaskForm):
+    """Form for searching for pet"""
+
+    species = SelectField(
+        'Species',
+        choices=[('dog', 'Dog'), ('cat', 'Cat'), ('rabit', 'Rabit'), ('bird', 'Bird')],
+        validators=[Optional()]
+    )
+
+    age = SelectField(
+        'Age',
+        choices=[('baby', 'Baby'), ('young', 'Young'), ('adult', 'Adult'), ('senior', 'Senior')],
+        validators=[Optional()]
+    )
+
+    name = StringField(
+        "Pet Name",
+        validators=[Optional()]
+    )

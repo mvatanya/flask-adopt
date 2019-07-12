@@ -4,26 +4,9 @@
 
 {% block content %}
 
-  <h3>Our Pets</h3>
-  
+  <h3>Search Results</h3> 
   <div class="row">
-    {% for pet in pets %}
-    <div class="col-3">
-      {% if pet.photo_url %}
-      <img class="img-thumbnail" src="{{ pet.photo_url }}" alt="">
-      {% endif %}
-      <p>
-            <a href="/pets/{{ pet.id }}">{{ pet.name }}</a>
-              is <b>available</b>! 
-      </p>
-    </div>
-      
-    {% endfor %}
-  </div>
-
-  <h3>Random Pet Finder Pets</h3> 
-  <div class="row">
-      {% for pet in pet_finder_pets %}
+      {% for pet in pets %}
       <div class="col-3">
         {% if pet.photo_url %}
         <img class="img-thumbnail" src="{{ pet.photo_url }}" alt="">
@@ -42,8 +25,5 @@
       {% endfor %}
   </div>
   
-  <a href="/search" class="btn btn-primary">Search</a>
-
-  <a href="/pets/new" class="btn btn-primary">Add a Pet</a>
- 
+  <a href="/search" class="btn btn-primary">Search</a> 
 {% endblock %}
